@@ -1,0 +1,12 @@
+streamlit
+openai
+langchain-community
+langchain-openai
+beautifulsoup4
+faiss-cpu
+unstructured
+langchain
+fitz
+frontend
+tools
+PyMuPDF
