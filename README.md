@@ -2,6 +2,10 @@
 
 AInquire is an AI-powered project designed to help you quickly extract relevant information from long news articles or PDF files. No more wasting time searching for key details – just provide a link or upload a document, and let AInquire do the rest!
 
+![image](https://github.com/user-attachments/assets/8d3f5464-2ee8-4b20-8104-f7c9f18e5a07)
+![image](https://github.com/user-attachments/assets/49d069b9-2a40-49e6-a4a2-74d0796975fa)
+
+
 ## 🌐 Demo
 Try AInquire live: [AInquire Demo](https://ainquire.streamlit.app)
 
