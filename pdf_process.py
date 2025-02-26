@@ -23,7 +23,7 @@ def delete_files():
                 elif os.path.isdir(file_path):
                     shutil.rmtree(file_path)
             except Exception as e:
-                print(f"Hata: {file_path} silinemedi. {e}")
+                print(f"File Error:{str(e)}")
 
 
 def extract_text_from_pdf(pdf_file):
@@ -47,4 +47,4 @@ def answer_question_from_pdf(data):
         answer = qa_chain.run(data["question"])
         return answer
     else:
-        return "PDF'den metin çıkarılamadı."
+        return "Could not extract text from PDF."

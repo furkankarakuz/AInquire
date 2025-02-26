@@ -12,7 +12,7 @@ url_tab, pdf_tab = st.tabs(["URL", "PDF"])
 
 with st.sidebar:
     with st.popover("Select OpenAI Model"):
-        model = st.selectbox("Select OpenAI Model", ["gpt-4o", "gpt-4-turbo", "gpt-4", "gpt-3.5-turbo", "gpt-3.5-turbo-0125", "other"])
+        model = st.selectbox("Select OpenAI Model", ["gpt-4o", "gpt-4-turbo", "gpt-4", "gpt-3.5-turbo", "other"])
         other_model = st.empty()
         if model == "other":
             other_model = other_model.text_input("Write OpenAI Model")
@@ -40,7 +40,7 @@ def form(target_type):
         if target_type == "URL":
             target_widget = st.text_input("Web URL", key="target_widget_url")
         else:
-            target_widget = st.file_uploader("PDF dosyasını yükle", type="pdf", key="target_widget_pdf")
+            target_widget = st.file_uploader("Upload PDF File", type="pdf", key="target_widget_pdf")
         question = st.text_area("Your Question", key=f"question_{target_type}")
         button_key = f"button_{target_type}"
 
@@ -57,9 +57,10 @@ def form(target_type):
     with url_col2:
         st.empty()
         if st.session_state.data["result"] is not None:
-            st.text_area("Result", st.session_state.data["result"], height=500, disabled=True, label_visibility="hidden", key=f"result_{target_type}")
-            data_dict = {"model": None, "api_key": None, "target": None, "question": None, "result": None}
-            st.session_state.data = data_dict
+            with st.spinner():
+                st.text_area("Result", st.session_state.data["result"], height=500, disabled=True, label_visibility="hidden", key=f"result_{target_type}")
+                data_dict = {"model": None, "api_key": None, "target": None, "question": None, "result": None}
+                st.session_state.data = data_dict
 
 
 with url_tab:
